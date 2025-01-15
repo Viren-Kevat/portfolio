@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"; // Import icons
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 
 const Home = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
