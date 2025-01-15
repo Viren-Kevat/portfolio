@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  background-image: url(E:\viren\development\react\data\my-portfolio\src\image\bg.jpg);
+  background-image: url(/public/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

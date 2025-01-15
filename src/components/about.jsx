@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import styles from "./About.module.css";
+import styles from "./about.module.css";
 import img from "../image/veer.jpg";
 
 const About = () => {
