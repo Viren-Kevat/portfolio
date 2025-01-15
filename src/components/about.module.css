@@ -1,0 +1,120 @@
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  width: 90%;
+  height: 300px;
+  margin-top: 20px;
+  background-color: #ffffff37;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures content stays within bounds */
+}
+
+.profileSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(100px); /* Offset to the right */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.profileSection.visible {
+  opacity: 1;
+  transform: translateX(0); /* Normal position */
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #000000b6;
+  object-fit: cover;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profileImage:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contentSection {
+  flex: 2;
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-100px); /* Offset to the left */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.contentSection.visible {
+  opacity: 1;
+  transform: translateX(0); /* Normal position */
+}
+
+.heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack image and content vertically */
+    text-align: center;
+    height: 35rem;
+  }
+
+  .profileSection {
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .contentSection {
+    text-align: center; /* Center-align text on mobile */
+  }
+
+  .profileImage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}

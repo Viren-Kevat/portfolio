@@ -1,0 +1,107 @@
+/* General navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Links and menu items styling */
+.navLinks {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.navLinks li {
+  font-size: 1rem;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #383737;
+}
+
+/* Hamburger menu (for mobile) styling */
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuIcon .bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* When the navbar is scrolled */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust the position to align below the navbar */
+    right: 0;
+    /* background-color: #ffffff68; */
+    
+    /* color: black; */
+    width: 100%;
+    padding: 20px;
+    text-align: center; /* Center the menu items */
+    flex-direction: column; /* Stack items vertically */
+    border-radius: 10px 10px 0 0;
+    z-index: 999; /* Ensure menu items are on top of other content */
+    transform: translateY(-30px); /* Initially moved up */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+  }
+
+  .navLinks.active {
+    display: flex;
+    transform: translateY(0); /* Move the menu down when active */
+    opacity: 1; /* Make the menu visible */
+  }
+
+  .menuIcon {
+    display: flex;
+  }
+
+  .navLinks li {
+    padding: 10px 0;
+  }
+
+  /* Push the content down below the navbar */
+  body.menu-open {
+    padding-top: 120px; /* Adjust body padding to accommodate the navbar height + menu */
+    transition: padding-top 0.3s ease;
+  }
+}
