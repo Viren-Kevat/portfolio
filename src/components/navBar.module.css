@@ -13,15 +13,15 @@ body {
 /* Navbar container */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Space between logo and hamburger icon */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 10px; /* Padding for the navbar */
+  padding: 0 15px; /* Adjusted padding for better spacing */
   background-color: transparent;
   color: white;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -29,7 +29,7 @@ body {
 
 /* Logo styling */
 .logo {
-  font-size: 1.2rem; /* Reduced logo size for small screens */
+  font-size: 1.4rem; /* Logo size */
   font-weight: bold;
   color: white;
   z-index: 2;
@@ -37,7 +37,8 @@ body {
   text-align: left;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 80%; /* Prevent overflow on small screens */
+  max-width: 70%; /* Ensure logo doesn't overflow */
+  text-overflow: ellipsis; /* Ensure long logos don't break the layout */
 }
 
 /* Hamburger icon styling */
@@ -50,8 +51,8 @@ body {
 }
 
 .menuIcon .bar {
-  width: 25px; /* Reduced width for bars */
-  height: 4px;
+  width: 30px; /* Adjusted width for better visibility */
+  height: 5px;
   background-color: white;
   border-radius: 5px;
 }
@@ -59,24 +60,21 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 10px; /* Reduced padding for mobile */
     justify-content: space-between;
-    background-color: #333; /* Optional: Add background color to navbar */
+    background-color: #333; /* Optional background color for the navbar */
+    padding: 0 10px; /* Slightly reduced padding for mobile */
   }
 
   /* Adjust the logo for mobile screens */
   .logo {
-    font-size: 1rem; /* Smaller logo text for mobile */
+    font-size: 1.2rem; /* Slightly smaller logo text */
     flex-grow: 0; /* Logo doesn’t take up all space */
-    white-space: nowrap; /* Prevent text wrapping */
-    max-width: 70%; /* Ensure logo doesn't overflow */
+    max-width: 60%; /* Ensure logo doesn't overflow */
   }
 
-  /* Show the hamburger icon on mobile screens */
+  /* Show the hamburger icon on mobile */
   .menuIcon {
     display: flex;
-    position: relative; /* Ensure it stays inside the navbar */
-    right: 0; /* Position it to the far right of the navbar */
     z-index: 3;
   }
 
@@ -88,15 +86,15 @@ body {
     margin: 0;
   }
 
-  /* Hide the navigation links by default on mobile */
+  /* Hide navigation links by default on mobile */
   .navLinks {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust the position for the menu */
+    top: 60px; /* Adjust the position of the menu */
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background for the menu */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
     padding: 15px 0;
     z-index: 1;
     opacity: 0;
@@ -104,7 +102,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  /* Active state for displaying the menu */
+  /* Show menu when active */
   .navLinks.active {
     display: flex;
     opacity: 1;
