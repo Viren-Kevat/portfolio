@@ -62,7 +62,7 @@ body {
     justify-content: space-evenly; /* Space items evenly */
     background-color: #333; /* Background color for the navbar */
     padding: 0 10px; /* Reduced padding for mobile */
-    width: 90%; /* Custom width for the navbar */
+    width: 80%; /* Custom width for the navbar */
     max-width: 600px; /* Maximum width */
     margin: 0 auto; /* Center the navbar */
   }
