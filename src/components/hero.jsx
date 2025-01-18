@@ -86,7 +86,7 @@ const Main = () => {
               }}
               camera={{ position: [6, 2, 6], fov: 60 }}
             >
-              <ambientLight intensity={0.8} />
+              <ambientLight intensity={0.699} />
               <spotLight position={[10, 10, 10]} angle={0.15} />
               <Center>
                 <LaptopModel />

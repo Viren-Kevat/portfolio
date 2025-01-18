@@ -72,7 +72,7 @@ const Projects = () => {
         });
       },
       {
-        threshold: 0.3, // Adjusted for better mobile detection
+        threshold: 0.1, // Adjusted for better small screen detection
       }
     );
 

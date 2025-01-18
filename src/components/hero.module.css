@@ -1,3 +1,8 @@
+body {
+  /* Remove the global overflow property */
+  overflow-x: visible; /* Allow horizontal scrolling where needed */
+}
+
 /* Home Section */
 .homeSection {
   display: flex;
