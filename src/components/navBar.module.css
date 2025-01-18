@@ -1,3 +1,4 @@
+
 /* Global reset for box-sizing */
 *,
 *::before,
@@ -13,15 +14,15 @@ body {
 /* Navbar container */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and hamburger icon */
   align-items: center;
-  padding: 0 15px; /* Adjusted padding for better spacing */
+  padding: 0 10px; /* Padding for the navbar */
   background-color: transparent;
   color: white;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* Ensure full width */
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -29,7 +30,7 @@ body {
 
 /* Logo styling */
 .logo {
-  font-size: 1.4rem; /* Logo size */
+  font-size: 1.2rem; /* Reduced logo size for small screens */
   font-weight: bold;
   color: white;
   z-index: 2;
@@ -37,8 +38,7 @@ body {
   text-align: left;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 70%; /* Ensure logo doesn't overflow */
-  text-overflow: ellipsis; /* Ensure long logos don't break the layout */
+  max-width: 80%; /* Prevent overflow on small screens */
 }
 
 /* Hamburger icon styling */
@@ -51,8 +51,8 @@ body {
 }
 
 .menuIcon .bar {
-  width: 30px; /* Adjusted width for better visibility */
-  height: 5px;
+  width: 25px; /* Reduced width for bars */
+  height: 4px;
   background-color: white;
   border-radius: 5px;
 }
@@ -60,14 +60,14 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbar {
-    justify-content: space-evenly;
-    background-color: #333; /* Optional background color for the navbar */
-    padding: 0 10px; /* Slightly reduced padding for mobile */
+    justify-content: space-evenly; /* Space items evenly */
+    background-color: #333; /* Background color for the navbar */
+    padding: 0 10px; /* Reduced padding for mobile */
   }
 
   /* Adjust the logo for mobile screens */
   .logo {
-    font-size: 1.2rem; /* Slightly smaller logo text */
+    font-size: 1.2rem; /* Smaller logo text */
     flex-grow: 0; /* Logo doesn’t take up all space */
     max-width: 60%; /* Ensure logo doesn't overflow */
   }
@@ -86,15 +86,15 @@ body {
     margin: 0;
   }
 
-  /* Hide navigation links by default on mobile */
+  /* Hide the navigation links by default on mobile */
   .navLinks {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust the position of the menu */
+    top: 60px; /* Adjust the position for the menu */
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for the menu */
     padding: 15px 0;
     z-index: 1;
     opacity: 0;
@@ -102,7 +102,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  /* Show menu when active */
+  /* Active state for displaying the menu */
   .navLinks.active {
     display: flex;
     opacity: 1;
