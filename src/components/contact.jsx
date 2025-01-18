@@ -1,7 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./contact.module.css";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: new FormData(e.target), // Send form data
+      });
+
+      if (response.ok) {
+        setFormStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Clear form
+      } else {
+        setFormStatus("Failed to send message.");
+      }
+    } catch (error) {
+      setFormStatus("Error sending message.");
+    }
+
+    setIsSubmitting(false);
+  };
+
   useEffect(() => {
     const contactContainer = document.querySelector(
       `.${styles.contactContainer}`
@@ -11,9 +50,9 @@ const ContactUs = () => {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible); // Add the 'visible' class
+            entry.target.classList.add(styles.visible); // Add 'visible' class when in viewport
           } else {
-            entry.target.classList.remove(styles.visible); // Remove the 'visible' class when leaving the viewport
+            entry.target.classList.remove(styles.visible); // Remove when leaving the viewport
           }
         });
       },
@@ -25,7 +64,7 @@ const ContactUs = () => {
     observer.observe(contactContainer);
 
     return () => {
-      observer.disconnect(); // Cleanup observer when component unmounts
+      observer.disconnect(); // Cleanup observer on unmount
     };
   }, []);
 
@@ -33,16 +72,52 @@ const ContactUs = () => {
     <section id="contact" className={styles.contactSection}>
       <div className={styles.contactContainer}>
         <h2 className={styles.contactTitle}>Contact Us</h2>
-        <div className={styles.inputGroup}>
-          <input type="text" placeholder="Your Name" />
-        </div>
-        <div className={styles.inputGroup}>
-          <input type="email" placeholder="Your Email" />
-        </div>
-        <div className={styles.inputGroup}>
-          <textarea placeholder="Your Message"></textarea>
-        </div>
-        <button className={styles.submitButton}>Submit</button>
+        <form
+          name="contact-form" // This name is important for Netlify to process the form
+          method="POST"
+          data-netlify="true" // Enables Netlify form handling
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact-form" />{" "}
+          {/* Hidden input for Netlify */}
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Submit"}
+          </button>
+        </form>
+        {formStatus && <p className={styles.formStatus}>{formStatus}</p>}
       </div>
     </section>
   );
