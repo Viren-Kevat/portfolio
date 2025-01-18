@@ -123,7 +123,7 @@ const Main = () => {
                 zIndex: 20, // Ensure the Canvas stays behind other content
               }}
               camera={{ position: [6, 2, 6], fov: 60 }}
-              performance={{ maxFPS: 9 }}
+              performance={{ maxFPS: 1 }}
             >
               <ambientLight intensity={0.8} />
               <spotLight position={[10, 10, 10]} angle={0.15} />
