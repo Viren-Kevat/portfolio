@@ -60,7 +60,7 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbar {
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #333; /* Optional background color for the navbar */
     padding: 0 10px; /* Slightly reduced padding for mobile */
   }
