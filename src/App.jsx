@@ -4,7 +4,7 @@ import About from "./components/about";
 import Skills from "./components/skills";
 import Projects from "./components/project";
 import Contact from "./components/contact";
-import Main from "./components/main";
+import Hero from "./components/hero";
 import Navbar from "./components/navBar";
 import "./App.css";
 
@@ -20,7 +20,7 @@ const App = () => {
                 <div>
                   <Navbar />
                   <Home />
-                  <Main />
+                  <Hero />
                   <About />
                   <Skills />
                   <Projects />

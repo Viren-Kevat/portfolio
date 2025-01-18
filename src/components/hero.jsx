@@ -4,7 +4,7 @@ import { useGLTF, OrbitControls, Center } from "@react-three/drei";
 import AOS from "aos";
 import "aos/dist/aos.css"; // AOS styles
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"; // Social media icons
-import styles from "./main.module.css";
+import styles from "./hero.module.css";
 
 // Loader for 3D Model
 const Loader = () => <div className={styles.loader}>Loading model...</div>;
@@ -12,7 +12,7 @@ const Loader = () => <div className={styles.loader}>Loading model...</div>;
 // 3D Laptop Model
 const LaptopModel = () => {
   const { scene } = useGLTF("/models/3d_clipart_-_webdev/scene.gltf");
-  return <primitive object={scene} scale={0.5} />;
+  return <primitive object={scene} scale={0.7} />;
 };
 
 const Main = () => {
@@ -80,8 +80,8 @@ const Main = () => {
                 width: windowWidth <= 768 ? "150%" : "100%", // Increase width for mobile screens
                 height: "70vh",
                 position: "absolute",
-                top: 180,
-                left: -100,
+                top: windowWidth <= 768 ? "180px" : "-48px",
+                left: windowWidth <= 768 ? "-100px" : "250px",
                 zIndex: 1000,
               }}
               camera={{ position: [6, 2, 6], fov: 60 }}

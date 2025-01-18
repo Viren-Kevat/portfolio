@@ -35,7 +35,7 @@ section {
   display: flex;
   justify-content: center; /* Center the card within the section */
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
   box-sizing: border-box;
   margin-top: 60px; /* Ensure space for the navbar */
 }
@@ -178,5 +178,5 @@ canvas {
 .card {
   position: relative;
   z-index: 10; /* Ensure the card content is not behind the canvas */
-  height: 34rem;
+  height: 40em;
 }
