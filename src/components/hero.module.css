@@ -66,6 +66,8 @@ section {
   max-width: 50%; /* Restrict text section width */
   text-align: left; /* Align text to the left */
   color: #fff; /* Text color */
+  position: relative;
+  z-index: 60000;
 }
 
 .textSection h1 {
