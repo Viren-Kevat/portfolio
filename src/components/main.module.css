@@ -178,4 +178,5 @@ canvas {
 .card {
   position: relative;
   z-index: 10; /* Ensure the card content is not behind the canvas */
+  height: 34rem;
 }

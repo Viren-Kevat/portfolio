@@ -6,13 +6,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
-    setIsMobile(!isMobile);
-
-    // Add or remove the 'menu-open' class on the body when the menu is toggled
+    setIsMobile((prevState) => !prevState);
+    // Add or remove menu open class on body to adjust layout
     if (!isMobile) {
-      document.body.classList.add("menu-open"); // Push content down
+      document.body.classList.add("menu-open");
     } else {
-      document.body.classList.remove("menu-open"); // Return content to original position
+      document.body.classList.remove("menu-open");
     }
   };
 
