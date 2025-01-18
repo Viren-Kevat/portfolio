@@ -80,7 +80,7 @@ const Main = () => {
                 width: windowWidth <= 768 ? "150%" : "100%", // Increase width for mobile screens
                 height: "70vh",
                 position: "absolute",
-                top: windowWidth <= 768 ? "180px" : "-48px",
+                top: windowWidth <= 768 ? "150px" : "-48px",
                 left: windowWidth <= 768 ? "-100px" : "250px",
                 zIndex: 1000,
               }}
