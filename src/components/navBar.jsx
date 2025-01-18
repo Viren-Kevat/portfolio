@@ -8,7 +8,6 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import Button from "@mui/material/Button";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -17,17 +16,6 @@ const Navbar = () => {
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
-  };
-
-  const handleNavigation = (id) => {
-    // Close the drawer after clicking
-    setDrawerOpen(false);
-
-    // Scroll to the section with the given ID
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
   };
 
   useEffect(() => {
@@ -85,7 +73,7 @@ const Navbar = () => {
 
       {/* Drawer for Burger Menu */}
       <Drawer
-        anchor="left" // Ensure this is correctly set to
+        anchor="left"
         open={drawerOpen}
         onClose={toggleDrawer(false)}
         sx={{
@@ -98,23 +86,59 @@ const Navbar = () => {
         }}
       >
         <List sx={{ width: 250 }}>
-          <ListItem button onClick={() => handleNavigation("home")}>
-            <ListItemText primary="Home" />
+          <ListItem button>
+            <a
+              href="#home"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="Home" />
+            </a>
           </ListItem>
-          <ListItem button onClick={() => handleNavigation("hero")}>
-            <ListItemText primary="Hero" />
+          <ListItem button>
+            <a
+              href="#hero"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="Hero" />
+            </a>
           </ListItem>
-          <ListItem button onClick={() => handleNavigation("about")}>
-            <ListItemText primary="About" />
+          <ListItem button>
+            <a
+              href="#about"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="About" />
+            </a>
           </ListItem>
-          <ListItem button onClick={() => handleNavigation("skills")}>
-            <ListItemText primary="Skills" />
+          <ListItem button>
+            <a
+              href="#skills"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="Skills" />
+            </a>
           </ListItem>
-          <ListItem button onClick={() => handleNavigation("project")}>
-            <ListItemText primary="Projects" />
+          <ListItem button>
+            <a
+              href="#projects"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="Projects" />
+            </a>
           </ListItem>
-          <ListItem button onClick={() => handleNavigation("contact")}>
-            <ListItemText primary="Contact" />
+          <ListItem button>
+            <a
+              href="#contact"
+              onClick={() => setDrawerOpen(false)}
+              style={{ textDecoration: "none", color: "#ffffff" }} // Use style here
+            >
+              <ListItemText primary="Contact" />
+            </a>
           </ListItem>
         </List>
       </Drawer>
