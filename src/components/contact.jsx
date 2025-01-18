@@ -46,14 +46,13 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <section id="contact" className={styles.contactSection}>
-      <div className={styles.contactContainer}>
+    <section className={styles.contactSection}>
+      <div id="contact" className={styles.contactContainer}>
         <h2 className={styles.contactTitle}>Contact Us</h2>
         <form
-          name="contact-form" // This name is important for Netlify to process the form
+          name="contact-form" // Form name for Netlify processing
           method="POST"
           data-netlify="true" // Enables Netlify form handling
-          onSubmit={() => setIsSubmitting(true)} // Set submitting state
         >
           <input type="hidden" name="form-name" value="contact-form" />{" "}
           {/* Hidden input for Netlify */}
