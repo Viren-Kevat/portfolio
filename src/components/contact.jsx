@@ -18,29 +18,6 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        body: new FormData(e.target), // Send form data
-      });
-
-      if (response.ok) {
-        setFormStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-      } else {
-        setFormStatus("Failed to send message.");
-      }
-    } catch (error) {
-      setFormStatus("Error sending message.");
-    }
-
-    setIsSubmitting(false);
-  };
-
   useEffect(() => {
     const contactContainer = document.querySelector(
       `.${styles.contactContainer}`
@@ -76,7 +53,7 @@ const ContactUs = () => {
           name="contact-form" // This name is important for Netlify to process the form
           method="POST"
           data-netlify="true" // Enables Netlify form handling
-          onSubmit={handleSubmit}
+          onSubmit={() => setIsSubmitting(true)} // Set submitting state
         >
           <input type="hidden" name="form-name" value="contact-form" />{" "}
           {/* Hidden input for Netlify */}
