@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./navbar.module.css";
+import styles from "./navBar.module.css";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
