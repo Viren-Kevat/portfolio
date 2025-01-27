@@ -19,7 +19,6 @@
   opacity: 1;
   transform: translateY(0); /* Normal position */
 }
-
 /* Hide the section and move it slightly down when not in view */
 .fadeOut {
   opacity: 0;
