@@ -3,12 +3,20 @@ import styles from "./project.module.css"; // Import CSS module
 
 const projectData = [
   {
+    title: "Full-Stack Todo Application",
+    description:
+      "📝 A full-stack Todo app using Express 🚀, MongoDB 🗄️, React ⚛️, and Vite ⚡. Users can sign up, log in, and manage tasks effortlessly.",
+    image:
+      "https://i.pinimg.com/736x/84/73/49/847349389bbfa0d3c5839c6c7a61731b.jpg",
+    link: "https://first-full-stack-virenkumar.vercel.app/",
+  },
+  {
     title: "Blog_veer",
     description:
-      "📝 Blogging Platform – A simple, secure app for public blogging! Built with ⚙️ Node.js, MySQL, and EJS, it features a dynamic feed 📜, easy post creation ✍️, editing 🔄, and secure deletion 🛡️. Effortlessly showcase your creativity! 🌐",
+      "📝 A secure blogging platform built with ⚙️ Node.js, MongoDB, and EJS, offering a dynamic feed 📜, seamless post creation ✍️, editing 🔄, and secure deletion 🛡️. Share your creativity effortlessly! 🌐",
     image:
       "https://i.pinimg.com/736x/22/b5/fc/22b5fc6562c4e3bf57d8cb9d53e57cd8.jpg",
-    link: "https://blog-veer.vercel.app/",
+    link: "https://blog-veer.onrender.com/",
   },
   {
     title: "Team_7",
