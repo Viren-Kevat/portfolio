@@ -37,18 +37,19 @@ const Navbar = () => {
     { id: "contact", label: "Contact", icon: <Email /> },
   ];
 
-  const scrollToSection = (id) => {
-    setDrawerOpen(false); // Close drawer first
+  const handleNavClick = (id) => {
+    setDrawerOpen(false); // ✅ Close the drawer first
     setTimeout(() => {
       const section = document.getElementById(id);
       if (section) {
         const navbarHeight =
           document.querySelector("header")?.offsetHeight || 80;
         const offset = section.offsetTop - navbarHeight;
+        section.setAttribute("tabindex", "-1"); // ✅ Ensure section is focusable
+        section.focus(); // ✅ Set focus properly
         window.scrollTo({ top: offset, behavior: "smooth" });
-        section.focus({ preventScroll: true });
       }
-    }, 300); // Short delay to ensure drawer is fully closed before scrolling
+    }, 200); // ✅ Delay to ensure smooth transition
   };
 
   return (
@@ -80,7 +81,10 @@ const Navbar = () => {
 
           {isMobile ? (
             <IconButton
-              onClick={() => setDrawerOpen(true)}
+              onClick={(e) => {
+                e.stopPropagation(); // ✅ Prevent accidental navigation to "Home"
+                setDrawerOpen(true);
+              }}
               sx={{ color: "#4b5563" }}
               aria-label="Open navigation menu"
             >
@@ -91,7 +95,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item.id)}
                   startIcon={item.icon}
                   sx={{
                     color: "#4b5563",
@@ -142,18 +146,18 @@ const Navbar = () => {
           },
         }}
         ModalProps={{
-          disablePortal: true,
-          keepMounted: true,
-          BackdropProps: {
-            invisible: true,
-          },
+          keepMounted: true, // ✅ Prevents unmounting and unnecessary re-renders
+          disableAutoFocus: true, // ✅ Stops automatic focus shift
+          disableEnforceFocus: true, // ✅ Prevents browser from forcing focus inside drawer
+          disableRestoreFocus: true, // ✅ Avoids restoring focus to previous elements
+          disableScrollLock: true, // ✅ Prevents freezing when scrolling
         }}
       >
         <List>
           {navItems.map((item) => (
             <ListItem
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => handleNavClick(item.id)}
               sx={{
                 "&:hover": { background: "rgba(99, 102, 241, 0.05)" },
               }}
