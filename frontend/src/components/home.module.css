@@ -15,7 +15,13 @@
   position: relative;
   overflow: hidden;
 }
-
+.subheading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures items wrap when needed */
+  gap: 1rem; /* Adds spacing */
+  justify-content: center; /* Center items */
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -285,7 +291,10 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-
+  .subheading {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
   .socialsContainer {
     flex-direction: row;
     justify-content: center;

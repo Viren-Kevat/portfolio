@@ -60,10 +60,15 @@ const Home = () => {
             </h1>
 
             <h2 className={styles.subheading}>
-              <Code className={styles.roleIcon} />
-              Full Stack Developer &nbsp;&nbsp;&nbsp;&nbsp;
-              <DesignServices className={styles.roleIcon} />
-              UI/UX Enthusiast
+              <div>
+                <Code className={styles.roleIcon} />
+                Full Stack Developer
+              </div>
+              &nbsp;&nbsp;
+              <div>
+                <DesignServices className={styles.roleIcon} />
+                UI/UX Enthusiast
+              </div>
             </h2>
 
             <p className={styles.description}>
