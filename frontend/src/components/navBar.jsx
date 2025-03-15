@@ -38,14 +38,17 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const navbarHeight = document.querySelector("header")?.offsetHeight || 80;
-      const offset = section.offsetTop - navbarHeight;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-      section.focus({ preventScroll: true });
-    }
-    setDrawerOpen(false);
+    setDrawerOpen(false); // Close drawer first
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      if (section) {
+        const navbarHeight =
+          document.querySelector("header")?.offsetHeight || 80;
+        const offset = section.offsetTop - navbarHeight;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+        section.focus({ preventScroll: true });
+      }
+    }, 300); // Short delay to ensure drawer is fully closed before scrolling
   };
 
   return (
