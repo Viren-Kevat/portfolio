@@ -136,7 +136,7 @@ const Main = () => {
                 position: "absolute",
                 top: windowWidth <= 768 ? "12rem" : "-3rem",
                 left: windowWidth <= 768 ? "-6rem" : "15rem",
-                zIndex: 1000,
+                zIndex: 10000,
               }}
               camera={{ position: [6, 2, 6], fov: 60 }}
             >
@@ -147,14 +147,11 @@ const Main = () => {
               </Center>
               <OrbitControls
                 enableZoom={false}
-                enablePan={false}
                 enableRotate={true}
-                enableTouchRotate={true} // ✅ Ensures touch gestures work
-                enableDamping={true} // ✅ Adds smoothness
-                dampingFactor={0.1} // ✅ Reduce sudden jumps
-                rotateSpeed={1}
-                autoRotate
-                autoRotateSpeed={2}
+                autoRotate={true}
+                autoRotateSpeed={4} // Adjust speed as needed
+                enableDamping={true} // Smooth interaction
+                // dampingFactor={0.05} // Reduce sensitivity
               />
             </Canvas>
           </Suspense>
