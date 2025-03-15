@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import styles from "./contact.module.css";
 
 const ContactUs = () => {
@@ -16,6 +17,26 @@ const ContactUs = () => {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus("");
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/contact`, // Replace with your actual backend URL
+        formData
+      );
+
+      setFormStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setFormStatus("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -49,13 +70,7 @@ const ContactUs = () => {
     <section id="contact" className={styles.contactSection}>
       <div className={styles.contactContainer}>
         <h2 className={styles.contactTitle}>Contact Us</h2>
-        <form
-          name="contact" // Form name for Netlify processing
-          method="POST"
-          data-netlify="true" // Enables Netlify form handling
-        >
-          <input type="hidden" name="form-name" value="contact-form" />{" "}
-          {/* Hidden input for Netlify */}
+        <form onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
             <input
               type="text"

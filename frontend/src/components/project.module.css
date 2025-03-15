@@ -67,19 +67,6 @@
   background-color: #0b0a0a;
   color: #f3ecec;
 }
-/* .projectLink {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.projectLink:hover {
-  background-color: #0056b3;
-} */
 
 /* Animation for sliding from left and right */
 @keyframes slideFromLeft {
