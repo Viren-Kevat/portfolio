@@ -61,7 +61,7 @@ const Home = () => {
 
             <h2 className={styles.subheading}>
               <Code className={styles.roleIcon} />
-              Full Stack Developer &nbsp;&nbsp;
+              Full Stack Developer &nbsp;&nbsp;&nbsp;&nbsp;
               <DesignServices className={styles.roleIcon} />
               UI/UX Enthusiast
             </h2>
