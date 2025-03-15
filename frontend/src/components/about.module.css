@@ -183,6 +183,7 @@
 @media (max-width: 768px) {
   .aboutSection {
     padding: 1rem 1.5rem;
+    margin-top: 3rem;
   }
 
   .heading {

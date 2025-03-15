@@ -130,6 +130,7 @@ const Main = () => {
               dpr={[1, 1.5]}
               frameloop="demand"
               style={{
+                touchAction: "none", // ✅ Fix for some mobile browsers
                 width: windowWidth <= 768 ? "150%" : "100%",
                 height: "70vh",
                 position: "absolute",
@@ -146,6 +147,12 @@ const Main = () => {
               </Center>
               <OrbitControls
                 enableZoom={false}
+                enablePan={false}
+                enableRotate={true}
+                enableTouchRotate={true} // ✅ Ensures touch gestures work
+                enableDamping={true} // ✅ Adds smoothness
+                dampingFactor={0.1} // ✅ Reduce sudden jumps
+                rotateSpeed={1}
                 autoRotate
                 autoRotateSpeed={2}
               />
