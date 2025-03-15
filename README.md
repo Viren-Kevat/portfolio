@@ -7,18 +7,23 @@ A fully responsive and interactive portfolio website showcasing my skills, proje
 - **Responsive Design:** Works seamlessly on all devices, including desktops, tablets, and mobile phones.
 - **3D Model Integration:** Includes a 3D laptop model rendered using `@react-three/fiber` and `@react-three/drei`.
 - **Smooth Animations:** Utilizes AOS (Animate On Scroll) for entry animations.
+- **Contact Form Integration:** Users can send messages directly to my email using Axios and SendGrid.
 - **Social Links:** Interactive icons with hover effects linking to GitHub, LinkedIn, and Instagram.
 - **Dynamic Navbar:** A responsive navigation menu with toggling functionality.
 
 ## Technologies Used
 
-- **Frontend Framework:** React.js
+- **Frontend Framework:** React.js with Vite
+- **Backend:** Node.js, Express.js, and SendGrid API
 - **3D Rendering:** @react-three/fiber and @react-three/drei
-- **CSS Modules:** Scoped and maintainable styling
+- **Styling:** CSS Modules for scoped and maintainable styling
 - **Animations:** AOS (Animate On Scroll)
 - **Icons:** FontAwesome
+- **HTTP Requests:** Axios for sending form data
 
 ## Project Structure
+
+**Frontend**
 
 ```
 src/
@@ -33,6 +38,18 @@ src/
 │   ├── Home.module.css   // Styles for Home component
 │   └── global.css        // Global styles
 └── App.js                // Main application file
+```
+
+**Backend**
+
+```
+├── backend/
+│ ├── routes/
+│ │ └── contact.js
+│ ├── app.js
+│ ├── package.json
+│ └── .env
+
 ```
 
 ## Installation and Setup
