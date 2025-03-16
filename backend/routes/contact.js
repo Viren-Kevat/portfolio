@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
 
   const msg = {
     to: process.env.RECEIVER_EMAIL, // Your email
-    from: ${email}, // Your verified sender email
+    from:` ${email}`, // Your verified sender email
     subject: "New Contact Form Submission",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `<p><strong>Name:</strong> ${name}</p>
