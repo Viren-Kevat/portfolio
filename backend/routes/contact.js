@@ -13,8 +13,9 @@ router.post("/", async (req, res) => {
   }
 
   const msg = {
-    to: process.env.RECEIVER_EMAIL, // Your email
-    from: process.env.SENDGRID_VERIFIED_SENDER, // Your verified sender email
+    to: process.env.RECEIVER_EMAIL, // Your email (where you receive messages)
+    from: process.env.RECEIVER_EMAIL, // Your verified sender email (must be registered in SendGrid)
+    replyTo: email, // User's email (so you can reply to them)
     subject: "New Contact Form Submission",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     html: `<p><strong>Name:</strong> ${name}</p>

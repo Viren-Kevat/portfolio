@@ -136,7 +136,7 @@ const Main = () => {
                 position: "absolute",
                 top: windowWidth <= 768 ? "12rem" : "-3rem",
                 left: windowWidth <= 768 ? "-6rem" : "15rem",
-                zIndex: 10000,
+                zIndex: 10000,marginBottom: "2rem",
               }}
               camera={{ position: [6, 2, 6], fov: 60 }}
             >
