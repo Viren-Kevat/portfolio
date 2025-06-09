@@ -3,28 +3,28 @@ import styles from "./project.module.css"; // Import CSS module
 
 const projectData = [
   {
-    title: "Full-Stack Todo Application",
+    title: "Tech-Talk Studio",
     description:
-      "📝 A full-stack Todo app using Express 🚀, MongoDB 🗄️, React ⚛️, and Vite ⚡. Users can sign up, log in, and manage tasks effortlessly.",
+      "Developed a full-stack web application for user authentication, blog/post management (create, edit, delete), and  profile handling with multi-language support. Integrated Firebase for authentication and Cloudinary for media uploads. Built with React (Vite) and Node.js (Express.js) for a modern, responsive user experience. ",
+    image:
+      "https://i.pinimg.com/736x/22/b5/fc/22b5fc6562c4e3bf57d8cb9d53e57cd8.jpg",
+    link: "https://tech-talk-studio.vercel.app/",
+  },
+  {
+    title: "Armanee – Full-Stack eCommerce Website ",
+    description:
+      "Built Armanee, a responsive eCommerce platform featuring secure user authentication, dynamic product browsing, and efficient cart management. Developed with React (Vite), Tailwind CSS, Express.js, and MongoDB for seamless, real-time user interactions. ",
+    image:
+      "https://i.pinimg.com/736x/b2/fb/21/b2fb21f206c56acc2007ed7e587d9770.jpg",
+    link: "https://armanee-e-commerce.vercel.app/",
+  },
+  {
+    title: "Task Management Web Application",
+    description:
+      "Built a full-stack task management application that enables secure task creation, real-time updates, and seamless management of personal tasks. Developed with React (Vite) and Express.js for a responsive, secure user experience.",
     image:
       "https://i.pinimg.com/736x/84/73/49/847349389bbfa0d3c5839c6c7a61731b.jpg",
     link: "https://first-full-stack-virenkumar.vercel.app/",
-  },
-  {
-    title: "Blog_veer",
-    description:
-      "📝 A secure blogging platform built with ⚙️ Node.js, MongoDB, and EJS, offering a dynamic feed 📜, seamless post creation ✍️, editing 🔄, and secure deletion 🛡️. Share your creativity effortlessly! 🌐",
-    image:
-      "https://i.pinimg.com/736x/22/b5/fc/22b5fc6562c4e3bf57d8cb9d53e57cd8.jpg",
-    link: "https://blog-veer.onrender.com/",
-  },
-  {
-    title: "Team_7",
-    description:
-      "This is my first React.js project built with Vite 🚀. It's an online shopping app 🛍️ offering a smooth and responsive shopping experience 📱💻.",
-    image:
-      "https://i.pinimg.com/736x/33/d9/97/33d9973a30aef2fd4ad94912bc5fdf1d.jpg",
-    link: "https://viren-kevat.netlify.app/",
   },
   {
     title: "Currency_Converter",
