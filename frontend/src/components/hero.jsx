@@ -58,7 +58,7 @@ const Main = () => {
           </header>
 
           <p className={styles.description}>
-            Full-Stack Developer specializing in crafting interactive,
+            Backend Developer specializing in crafting interactive,
             responsive web experiences with modern technologies and user-centric
             design principles.
           </p>
