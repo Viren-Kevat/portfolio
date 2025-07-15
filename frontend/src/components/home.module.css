@@ -20,7 +20,7 @@
   align-items: center;
   flex-wrap: wrap; /* Ensures items wrap when needed */
   gap: 1rem; /* Adds spacing */
-  justify-content: center; /* Center items */
+
 }
 .container {
   max-width: 1200px;
