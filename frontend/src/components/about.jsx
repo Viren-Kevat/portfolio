@@ -47,11 +47,10 @@ const About = () => {
         >
           <div className={styles.textWrapper}>
             <p className={styles.text}>
-              Hello! I'm Viren, a passionate full-stack developer and UI/UX
-              enthusiast dedicated to creating seamless digital experiences.
-              Currently pursuing my B.E. in Information Technology at Government
-              Engineering College Modasa, I blend technical expertise with
-              creative problem-solving.
+              Hello! I'm Viren, a passionate Backend developer dedicated to 
+              creating seamless digital experiences.Currently pursuing my B.E. 
+              in Information Technology at Government Engineering College Modasa, 
+              I blend technical expertise with creative problem-solving.
             </p>
             <p className={styles.text}>
               When I'm not coding, you'll find me immersed in Bollywood retro
